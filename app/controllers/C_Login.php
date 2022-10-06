@@ -86,7 +86,7 @@ class C_Login extends CI_Controller
 
                 $this->session->set_flashdata(
                     'msg',
-                    '<div class="alert alert-danger">Usuario y/o Password Invalido</div>'
+                    '<div class="alert alert-danger">Acceso denegado - nombre de usuario o contraseña incorrectos.</div>'
                 );
                 $this->view_login();
             }
@@ -98,10 +98,10 @@ class C_Login extends CI_Controller
     /* view_login Method */
     public function view_login()
     {
-        //$data['home'] = 'SEGUIMIENTO TOMA DE MUESTRA';
+        $data['title'] = 'App-Login';
         //$data['img_header'] = base_url() . 'assets/images/logo.png';
 
-        $this->load->view('template/header');
+        $this->load->view('template/header', $data);
         $this->load->view('pages/login');
         $this->load->view('template/footer');
     }

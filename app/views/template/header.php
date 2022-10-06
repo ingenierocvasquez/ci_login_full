@@ -13,9 +13,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="">
   <meta name="author" content="">
-  <link rel="icon" href="">
+  <link rel="icon" href="<?php echo base_url().'lock.ico'?>">
 
-  <title>Hello</title>
+  <title><?php echo $title;?></title>
 
   <!-- Bootstrap core CSS -->
   <link href="<?php echo base_url().'assets/bootstrap/css/bootstrap.css'?>" rel="stylesheet">
