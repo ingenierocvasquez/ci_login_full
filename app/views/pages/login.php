@@ -87,7 +87,7 @@
                       <hr>
                       <ul id="login_option">
                       <li><span><a href="#">¿Ha olvidado su contraseña?</a></span></li>
-                      <li><span><a href="#">Registrate</a></span></li>
+                      <li><span><a href="#">¡Registrate!</a></span></li>
                       <ul>
                     </div>
               </div>
