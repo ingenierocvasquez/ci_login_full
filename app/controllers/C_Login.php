@@ -34,6 +34,7 @@ class C_Login extends CI_Controller
                 case '1':
                     //$data['img_header'] = base_url() . 'assets/images/logo.png';
                     $this->load->view('template/header', $data);
+                    $this->load->view('template/navbar');
                     $this->load->view('pages/panel', $data);
                     $this->load->view('template/footer');
                     break;
