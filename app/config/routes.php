@@ -56,4 +56,6 @@ $route['translate_uri_dashes'] = FALSE;
 /* route login */
 $route['login'] 			= 'C_Login';
 $route['validate'] 	        = 'C_Login/access_validate';
-$route['cerrarsesion'] 	    = 'C_iniciar_sesion/Cerrar_sesion';
+$route['logout'] 	        = 'C_Login/logout';
+
+

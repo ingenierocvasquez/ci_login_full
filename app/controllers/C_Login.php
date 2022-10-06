@@ -22,26 +22,28 @@ class C_Login extends CI_Controller
             );
         endif;
 
-        if ($this->session->userdata('user_type') === '0') {
+        if ($this->session->userdata('status') === '0') {
             $this->session->set_flashdata( 'msg', '<div class="alert alert-danger">Usuario Inactivo</div>');
             $this->view_login();
-        } else {
-            $i = $this->session->userdata('user_type');
+        } else {    
+
+
+            $i = $this->session->userdata('status');
 
             switch ($i) {
-                case 'administrador':
+                case '1':
+                    //$data['img_header'] = base_url() . 'assets/images/logo.png';
+                    $this->load->view('template/header', $data);
+                    $this->load->view('pages/panel', $data);
+                    $this->load->view('template/footer');
+                    break;
+                case "2":
                     //$data['img_header'] = base_url() . 'assets/images/logo.png';
                     //$this->load->view('plantilla_admin/header', $data);
                     //$this->load->view('V_tablero_principal', $data);
                     //$this->load->view('plantilla_admin/footer');
                     break;
-                case "lprass":
-                    //$data['img_header'] = base_url() . 'assets/images/logo.png';
-                    //$this->load->view('plantilla_admin/header', $data);
-                    //$this->load->view('V_tablero_principal', $data);
-                    //$this->load->view('plantilla_admin/footer');
-                    break;
-                case "prestador":
+                case "3":
                     //$data['img_header'] = base_url() . 'assets/images/logo.png';
                     //$this->load->view('plantilla_admin/header', $data);
                     //$this->load->view('V_tablero_principal', $data);
@@ -66,18 +68,16 @@ class C_Login extends CI_Controller
 
         if ($this->form_validation->run() == true) {
 
-            $user = $this->M_Login->LoginBD($username, $password);
-            if ($user && count($user) == 1) {
-                $session = array(
-                    'doc_user' => $user->doc_user,
-                    'user_id' => $user->user_id,
-                    'user_type' => $user->user_type,
-                    'regional' => $user->regional,
-                    'ncompleto' => $user->ncompleto,
-                    'des_user_type' => $user->des_user_type,                    
-                    'is_logged_in' => true,
-                );
-
+            $user = $this->M_Login->login_database($username, $password);
+            if ($user && count($user) === 1) {
+                
+                foreach($user as $item)
+				{
+					$session = array(
+						'status' => $item['status'],
+						'is_logged_in' => true,
+					);			
+				 }
                 $this->session->set_userdata($session);
 
                 $this->index();

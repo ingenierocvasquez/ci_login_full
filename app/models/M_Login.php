@@ -5,11 +5,11 @@
 class M_Login extends CI_Model
 {
 
-    public function LoginBD($usuario, $password)
+    public function login_database($usuario, $password)
     {
-        $this->db->where('user_id', $usuario);
-        $this->db->where('user_pw', $password);
-        return $this->db->get('seg_users')->row();
+        $this->db->where('username', $usuario);
+        $this->db->where('password', $password);
+        return $this->db->get('user')->result_array();
     }
 
    /* public function gr_atencion()
