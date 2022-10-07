@@ -2,14 +2,13 @@
     exit('No direct script access allowed');
 }
 
-class C_Login extends CI_Controller
+class Auth extends CI_Controller
 {
     /* construct */
     public function __construct()
     {
         parent::__construct();
-        //$this->load->model('M_paginas');
-        $this->load->model('M_Login');
+        $this->load->model('Model_auth');
     }
 
     /* index Method */
@@ -17,7 +16,6 @@ class C_Login extends CI_Controller
     {
 
         if ($this->session->userdata('is_logged_in')):
-            //$data['img_header'] = base_url() . 'assets/images/logo.png';
             $data = array(
             );
         endif;
@@ -32,23 +30,16 @@ class C_Login extends CI_Controller
 
             switch ($i) {
                 case '1':
-                    //$data['img_header'] = base_url() . 'assets/images/logo.png';
                     $this->load->view('template/header', $data);
                     $this->load->view('template/navbar');
                     $this->load->view('pages/panel', $data);
                     $this->load->view('template/footer');
                     break;
                 case "2":
-                    //$data['img_header'] = base_url() . 'assets/images/logo.png';
-                    //$this->load->view('plantilla_admin/header', $data);
-                    //$this->load->view('V_tablero_principal', $data);
-                    //$this->load->view('plantilla_admin/footer');
+                   
                     break;
                 case "3":
-                    //$data['img_header'] = base_url() . 'assets/images/logo.png';
-                    //$this->load->view('plantilla_admin/header', $data);
-                    //$this->load->view('V_tablero_principal', $data);
-                    //$this->load->view('plantilla_admin/footer');
+                    
                     break;
                 default:
                     $this->view_login();
@@ -56,8 +47,8 @@ class C_Login extends CI_Controller
         }
     }
 
-     /* access_validate Method */
-    public function access_validate()
+     /* login Method */
+    public function login()
     {
 
         $this->form_validation->set_rules("usuario", "Usuario", "trim|required");
@@ -69,7 +60,7 @@ class C_Login extends CI_Controller
 
         if ($this->form_validation->run() == true) {
 
-            $user = $this->M_Login->login_database($username, $password);
+            $user = $this->Model_auth->login_database($username, $password);
             if ($user && count($user) === 1) {
                 
                 foreach($user as $item)
@@ -99,8 +90,6 @@ class C_Login extends CI_Controller
     public function view_login()
     {
         $data['title'] = 'App-Login';
-        //$data['img_header'] = base_url() . 'assets/images/logo.png';
-
         $this->load->view('template/header', $data);
         $this->load->view('pages/login');
         $this->load->view('template/footer');
@@ -111,6 +100,10 @@ class C_Login extends CI_Controller
     {
         if ($this->session->userdata('is_logged_in')) {
             $this->session->sess_destroy();
+            $this->session->set_flashdata(
+                'msg',
+                '<div class="alert alert-success" role="alert">You have been logged out! </div>'
+            );
             redirect(base_url() . 'login');
         }
     }

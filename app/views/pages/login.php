@@ -43,7 +43,7 @@
 
                       echo $this->session->flashdata('msg');
 
-                      echo form_open("validate", $attributes);
+                      echo form_open("login", $attributes);
                       ?>
                       <div class="form-group">
                         <label>Usuario: <span class="campo_obli">*</span></label>
