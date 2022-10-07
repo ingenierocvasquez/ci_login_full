@@ -28,7 +28,7 @@
 
             <div class="row">
               <div class="col-md-6" id="img_login">
-                <img src="https://app.hipotest.com/static/img/login-image.bd6d757d.png" class="img-responsive" alt="" />
+                <img src="<?php echo base_url().'assets/images/login_image.png'?>" class="img-responsive" alt="" />
               </div>
               <div class="col-md-4" id="frm_login">
                     <div id="login_form">

@@ -30,6 +30,10 @@ class Auth extends CI_Controller
 
             switch ($i) {
                 case '1':
+<<<<<<< Updated upstream:app/controllers/Auth.php
+=======
+                    $data['title'] = 'App-Login';
+>>>>>>> Stashed changes:app/controllers/C_Login.php
                     $this->load->view('template/header', $data);
                     $this->load->view('template/navbar');
                     $this->load->view('pages/panel', $data);
