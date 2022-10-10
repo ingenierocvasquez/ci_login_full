@@ -30,10 +30,7 @@ class Auth extends CI_Controller
 
             switch ($i) {
                 case '1':
-<<<<<<< Updated upstream:app/controllers/Auth.php
-=======
-                    $data['title'] = 'App-Login';
->>>>>>> Stashed changes:app/controllers/C_Login.php
+                    $data['title'] = 'App-Solicitudes';
                     $this->load->view('template/header', $data);
                     $this->load->view('template/navbar');
                     $this->load->view('pages/panel', $data);
@@ -59,7 +56,7 @@ class Auth extends CI_Controller
         $this->form_validation->set_rules("password", "Clave", "trim|required|min_length[5]");
 
         $username = $this->input->post('usuario');
-        $password = md5($this->input->post('password'));
+        $password = md5((string) $this->input->post('password'));
         $url = $this->input->post('url');
 
         if ($this->form_validation->run() == true) {
@@ -93,7 +90,7 @@ class Auth extends CI_Controller
     /* view_login Method */
     public function view_login()
     {
-        $data['title'] = 'App-Login';
+        $data['title'] = 'App-Solicitudes';
         $this->load->view('template/header', $data);
         $this->load->view('pages/login');
         $this->load->view('template/footer');

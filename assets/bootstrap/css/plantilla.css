@@ -4,7 +4,13 @@
     margin-top: 5rem;
   }
 
-  .name {
-    padding: 20px;
-  }
+  p.name {
+    margin: 0 10px;
+}
+
+#img_lista_solicitudes{
+  display: grid; 
+  align-self: center;
+  justify-items: center; 
+}
 
