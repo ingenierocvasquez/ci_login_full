@@ -7,16 +7,14 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-<<<<<<< Updated upstream
+
           <a class="navbar-brand" href="#"><b><?php echo $title;?></b></a>
-=======
-          <a class="navbar-brand" href="#"><b>App-Login</b></a>
->>>>>>> Stashed changes
+
         </div>
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Inicio</a></li>
-            <li><a href="#">Consultas</a></li>
+            <li class="active"><a href="<?php echo base_url() . 'auth'?>">Inicio</a></li>
+            <li><a href="<?php echo base_url() . 'user/main'?>">Usuario</a></li>
             <li><a href="#">Contáctenos</a></li>
           </ul>
 

@@ -1,4 +1,3 @@
-<<<<<<< Updated upstream
 <h1>Listados Solicitudes de Usuarios</h1>
 <hr>
 <div class="row">
@@ -20,7 +19,3 @@
     <hr>
 
 </div> 
-=======
-<h1>Welcome</h1>
-<a href="<?php echo base_url() . 'logout'?>">Logout</a>
->>>>>>> Stashed changes
