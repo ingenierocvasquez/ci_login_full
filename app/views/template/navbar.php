@@ -7,7 +7,11 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
+<<<<<<< Updated upstream
           <a class="navbar-brand" href="#"><b><?php echo $title;?></b></a>
+=======
+          <a class="navbar-brand" href="#"><b>App-Login</b></a>
+>>>>>>> Stashed changes
         </div>
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
