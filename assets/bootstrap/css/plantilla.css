@@ -14,3 +14,26 @@
   justify-items: center; 
 }
 
+ /** CSS Login Form**/
+
+ body {
+  margin-top: 20px;
+  background-color: #FFF;
+}
+
+span.error {
+  color: red;
+}
+
+div#img_login {
+  text-align: -webkit-center;
+}
+
+ul#login_option {
+  padding-left: 0px;
+}
+
+ul#login_option li {
+  list-style: none;
+}
+

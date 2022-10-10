@@ -8,13 +8,13 @@ class Auth extends CI_Controller
     public function __construct()
     {
         parent::__construct();
-        $this->load->model('Model_auth');
+        $this->load->model('Model_auth');        
     }
 
     /* index Method */
     public function index()
     {
-
+        
         if ($this->session->userdata('is_logged_in')):
             $data = array(
             );
@@ -100,11 +100,7 @@ class Auth extends CI_Controller
     public function logout()
     {
         if ($this->session->userdata('is_logged_in')) {
-            $this->session->sess_destroy();
-            $this->session->set_flashdata(
-                'msg',
-                '<div class="alert alert-success" role="alert">You have been logged out! </div>'
-            );
+            $this->session->sess_destroy();            
             redirect(base_url() . 'login');
         }
     }

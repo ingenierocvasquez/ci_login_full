@@ -1,28 +1,3 @@
-<style type="text/css">
-  /** CSS Login Form**/
-
-  body {
-    margin-top: 20px;
-    background-color: #FFF0E5;
-  }
-
-  span.error {
-    color: red;
-  }
-
-  div#img_login {
-    text-align: -webkit-center;
-  }
-
-  ul#login_option {
-    padding-left: 0px;
-  }
-
-  ul#login_option li {
-    list-style: none;
-  }
-</style>
-
 <section class="login">
       <div class="container">
 
