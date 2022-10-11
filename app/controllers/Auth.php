@@ -26,17 +26,22 @@ class Auth extends CI_Controller
         } else {    
 
 
-            $i = $this->session->userdata('status');
+            $i = $this->session->userdata('rol_user');
 
             switch ($i) {
                 case '1':
-                    $data['title'] = 'App-Solicitudes';
+                    $data['title'] = 'App-Solicitudes-Administrador';
                     $this->load->view('template/header', $data);
                     $this->load->view('template/navbar');
                     $this->load->view('pages/panel', $data);
                     $this->load->view('template/footer');
                     break;
                 case "2":
+                    $data['title'] = 'App-Solicitudes-Estudiante';
+                    $this->load->view('template/header', $data);
+                    $this->load->view('template/navbar');
+                    $this->load->view('pages/panel', $data);
+                    $this->load->view('template/footer');
                    
                     break;
                 case "3":
@@ -67,10 +72,16 @@ class Auth extends CI_Controller
                 foreach($user as $item)
 				{
 					$session = array(
+                        'username' => $item['username'],
 						'status' => $item['status'],
+                        'rol_user' => $item['rol_user'],
+                        'lastname' => $item['lastname'],
+                        'firstname' => $item['firstname'],
+                        'email' => $item['email'],
 						'is_logged_in' => true,
 					);			
 				 }
+
                 $this->session->set_userdata($session);
 
                 $this->index();

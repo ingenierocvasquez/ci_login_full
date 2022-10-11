@@ -19,6 +19,18 @@
     <script src="<?php echo base_url().'assets/bootstrap/js/bootstrap.js'?>"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+    
+    <!-- Groser Crud JS -->
+    <script src="<?php echo base_url().'assets/grocery_crud/js/jquery-2.2.4.min.js' ?>"></script>
+    <script src="<?php echo base_url().'assets/grocery_crud/js/jquery_plugins/jquery.numeric.min.js' ?>"></script> 
+    <script src="<?php echo base_url().'assets/grocery_crud/js/jquery_plugins/config/jquery.numeric.config.js' ?>"></script> 
+    <script src="<?php echo base_url().'assets/grocery_crud/js/jquery_plugins/ui/jquery-ui-1.10.3.custom.min.js' ?>"></script> 
+    <script src="<?php echo base_url().'assets/grocery_crud/js/jquery_plugins/ui/i18n/datepicker/jquery.ui.datepicker-es.js' ?>"></script> 
+    <script src="<?php echo base_url().'assets/grocery_crud/js/jquery_plugins/config/jquery.datepicker.config.js' ?>"></script>
+    <script src="<?php echo base_url().'assets/grocery_crud/js/jquery_plugins/jquery.chosen.min.js' ?>"></script> 
+    <script src="<?php echo base_url().'assets/grocery_crud/js/jquery_plugins/config/jquery.chosen.config.js' ?>"></script>
+    <script src="<?php echo base_url().'assets/grocery_crud/themes/bootstrap/build/js/global-libs.min.js' ?>"></script> 
+    <script src="<?php echo base_url().'assets/grocery_crud/themes/bootstrap/js/form/edit.min.js' ?>"></script>
 
 </body>
 </html>

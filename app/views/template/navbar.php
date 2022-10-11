@@ -22,18 +22,18 @@
 
                      <li class="dropdown" style="float:right">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="true">
-                                    <img width="20px" class="img-circle" src="https://ak.picdn.net/contributors/283336203/avatars/thumb.jpg" alt="VASQUEZ TRUCCO, CESAR FERNANDO">
-                                    <span class="username-movil">VASQUEZ TRUCCO, CESAR FERNANDO</span>
+                                    <img width="20px" class="img-circle" src="https://ak.picdn.net/contributors/283336203/avatars/thumb.jpg" alt="img">
+                                    <span class="username-movil"><?php echo $this->session->userdata('lastname');?>, <?php echo $this->session->userdata('firstname');?></span>
                                     <span class="caret"></span>
                                 </a>
                                 <ul class="dropdown-menu" role="menu">
                                     <li class="user-header">
                                         <div class="text-center">
-                                            <a href="">
-                                                <img width="64px"  class="img-circle" src="https://ak.picdn.net/contributors/283336203/avatars/thumb.jpg" alt="VASQUEZ TRUCCO, CESAR FERNANDO">
-                                                <p class="name">VASQUEZ TRUCCO, CESAR FERNANDO</p>
+                                            <a href="#">
+                                                <img width="64px"  class="img-circle" src="https://ak.picdn.net/contributors/283336203/avatars/thumb.jpg" alt="img">
+                                                <p class="name"><?php echo $this->session->userdata('lastname');?>, <?php echo $this->session->userdata('firstname');?></p>
                                             </a>
-                                            <p><em class="fa fa-envelope-o" aria-hidden="true"></em> ingenierocvasquez@gmail.com</p>
+                                            <p><em class="fa fa-envelope-o" aria-hidden="true"></em> <?php echo $this->session->userdata('email');?></p>
                                         </div>
                                     </li>
                                     <li role="separator" class="divider"></li>
