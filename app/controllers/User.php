@@ -54,7 +54,8 @@ class User extends CI_Controller
             $crud->display_as('lastname', 'Apellidos: ');
             $crud->display_as('firtsname', 'Nombres: ');
             $crud->display_as('datebirth', 'Fecha de Nacimiento: ');
-            $crud->display_as('grade', 'Grado: ');      
+            $crud->display_as('grade', 'Grado: ');    
+            $crud->display_as('movil', 'Numero de Celular: ');    
          
             $i = $this->session->userdata('rol_user');
             switch ($i) {
@@ -70,13 +71,13 @@ class User extends CI_Controller
                     $crud->unset_export();
                     $crud->unset_add();
                     $crud->where('username', $this->session->userdata('username'));
-                    $crud->columns('username', 'password', 'status', 'email', 'grade');
+                    $crud->columns('username', 'password', 'status', 'email', 'grade', 'movil');
                     $crud->field_type('at_create', 'hidden');
                     $crud->field_type('status', 'hidden');
                     $crud->field_type('rol_user', 'hidden');
                     $crud->field_type('password', 'password');
                     break;
-                    
+
                 default:
                     redirect('login');
 

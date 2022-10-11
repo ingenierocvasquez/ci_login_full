@@ -30,6 +30,7 @@ class Auth extends CI_Controller
 
             switch ($i) {
                 case '1':
+                    $data['data_user'] = $this->Model_auth->data_user();
                     $data['title'] = 'App-Solicitudes-Administrador';
                     $this->load->view('template/header', $data);
                     $this->load->view('template/navbar');
@@ -37,6 +38,7 @@ class Auth extends CI_Controller
                     $this->load->view('template/footer');
                     break;
                 case "2":
+                    $data['data_user'] = $this->Model_auth->data_user();
                     $data['title'] = 'App-Solicitudes-Estudiante';
                     $this->load->view('template/header', $data);
                     $this->load->view('template/navbar');

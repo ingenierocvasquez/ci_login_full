@@ -22,15 +22,15 @@
 
                      <li class="dropdown" style="float:right">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="true">
-                                    <img width="20px" class="img-circle" src="https://ak.picdn.net/contributors/283336203/avatars/thumb.jpg" alt="img">
+                                    <img width="20px" class="img-circle" src="<?php echo base_url() . 'assets/images/avatar.png'?>" alt="img">
                                     <span class="username-movil"><?php echo $this->session->userdata('lastname');?>, <?php echo $this->session->userdata('firstname');?></span>
                                     <span class="caret"></span>
                                 </a>
                                 <ul class="dropdown-menu" role="menu">
                                     <li class="user-header">
                                         <div class="text-center">
-                                            <a href="#">
-                                                <img width="64px"  class="img-circle" src="https://ak.picdn.net/contributors/283336203/avatars/thumb.jpg" alt="img">
+                                            <a href="<?php echo base_url() . 'user/main'?>">
+                                                <img width="64px"  class="img-circle" src="<?php echo base_url() . 'assets/images/avatar.png'?>" alt="img">
                                                 <p class="name"><?php echo $this->session->userdata('lastname');?>, <?php echo $this->session->userdata('firstname');?></p>
                                             </a>
                                             <p><em class="fa fa-envelope-o" aria-hidden="true"></em> <?php echo $this->session->userdata('email');?></p>
