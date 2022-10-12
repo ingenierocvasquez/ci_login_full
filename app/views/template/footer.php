@@ -32,5 +32,15 @@
     <script src="<?php echo base_url().'assets/grocery_crud/themes/bootstrap/build/js/global-libs.min.js' ?>"></script> 
     <script src="<?php echo base_url().'assets/grocery_crud/themes/bootstrap/js/form/edit.min.js' ?>"></script>
 
+    <script>   
+    $(document).ready(function(){
+    let f = new Date();             
+    let fecha_format = f.getFullYear() + "-" + (f.getMonth() +1) + "-"+ f.getDate();
+    $('#field-fecha_ticket').val(fecha_format);
+
+  });
+  
+  </script>
+
 </body>
 </html>
