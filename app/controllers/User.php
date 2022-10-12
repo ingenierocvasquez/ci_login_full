@@ -52,10 +52,13 @@ class User extends CI_Controller
             $crud->display_as('email', 'Correo Eletronico: ');
             $crud->display_as('rol_user', 'Rol del Usuario: ');
             $crud->display_as('lastname', 'Apellidos: ');
-            $crud->display_as('firtsname', 'Nombres: ');
+            $crud->display_as('firstname', 'Nombres: ');
             $crud->display_as('datebirth', 'Fecha de Nacimiento: ');
             $crud->display_as('grade', 'Grado: ');    
-            $crud->display_as('movil', 'Numero de Celular: ');    
+            $crud->display_as('movil', 'Numero de Celular: '); 
+            $crud->field_type('at_create', 'hidden');
+            $crud->field_type('status', 'true_false');
+            $crud->unique_fields(array('username'));   
          
             $i = $this->session->userdata('rol_user');
             switch ($i) {
@@ -64,19 +67,15 @@ class User extends CI_Controller
                     break;   
 
                 case "2":
-                    $crud->unset_print();
-                    $crud->unset_delete();
-                    $crud->unset_read();
-                    $crud->unset_clone();
-                    $crud->unset_export();
-                    $crud->unset_add();
+                    $crud->unset_operations();
                     $crud->where('username', $this->session->userdata('username'));
-                    $crud->columns('username', 'password', 'status', 'email', 'grade', 'movil');
+                    $crud->columns('username', 'firstname', 'lastname', 'status', 'email', 'grade', 'movil', 'datebirth');
                     $crud->field_type('at_create', 'hidden');
                     $crud->field_type('status', 'hidden');
                     $crud->field_type('rol_user', 'hidden');
                     $crud->field_type('password', 'password');
                     break;
+               
 
                 default:
                     redirect('login');
@@ -102,7 +101,6 @@ class User extends CI_Controller
             );*/
 
             $crud->callback_before_insert(array($this, 'encrypt_pw'));
-
             $crud->callback_column('status', array($this, 'idenvisualestado'));
 
             $output = $crud->render();

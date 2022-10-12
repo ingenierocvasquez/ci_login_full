@@ -11,6 +11,7 @@
 	<?php endforeach; ?>
 	
 	<p></p>
+	
 	<?php echo $output; ?>
 
 </div>
