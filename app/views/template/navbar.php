@@ -15,6 +15,7 @@
           <ul class="nav navbar-nav">
             <li class="active"><a href="<?php echo base_url() . 'auth'?>">Inicio</a></li>
             <li><a href="<?php echo base_url() . 'user/main'?>">Usuario</a></li>
+            <li><a href="<?php echo base_url() . 'ticket/main'?>">Ticket</a></li>
             <li><a href="#">Contáctenos</a></li>
           </ul>
 

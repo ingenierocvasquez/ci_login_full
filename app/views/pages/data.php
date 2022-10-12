@@ -8,10 +8,9 @@
 	<!-- JS -->
 	<?php foreach($js_files as $file): ?>
 		<script src="<?php echo $file; ?>"></script>
-	<?php endforeach; ?>
-	
-	<p></p>
-	
+	<?php endforeach; ?>	
+
+	<p></p>	
 	<?php echo $output; ?>
 
-</div>
+	</div>

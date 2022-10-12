@@ -3,14 +3,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 /*
 |--------------------------------------------------------------------------
-| Configuración de Zona Horaria de Colombia
-|--------------------------------------------------------------------------
-*/
-
-$config['time_zone'] = date_default_timezone_set('America/Bogota');
-
-/*
-|--------------------------------------------------------------------------
 | Base Site URL
 |--------------------------------------------------------------------------
 |
@@ -509,6 +501,7 @@ $config['compress_output'] = FALSE;
 |
 */
 $config['time_reference'] = 'local';
+//$config['time_reference'] = 'America/Bogota';
 
 /*
 |--------------------------------------------------------------------------

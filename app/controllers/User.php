@@ -50,13 +50,14 @@ class User extends CI_Controller
             $crud->display_as('at_create', 'Fecha de Registro: ');
             $crud->display_as('status', 'Estado: ');
             $crud->display_as('email', 'Correo Eletronico: ');
+            $crud->set_rules('email', 'Correo Eletronico', 'required|valid_email');
             $crud->display_as('rol_user', 'Rol del Usuario: ');
             $crud->display_as('lastname', 'Apellidos: ');
             $crud->display_as('firstname', 'Nombres: ');
             $crud->display_as('datebirth', 'Fecha de Nacimiento: ');
             $crud->display_as('grade', 'Grado: ');    
             $crud->display_as('movil', 'Numero de Celular: '); 
-            $crud->field_type('at_create', 'hidden');
+            //$crud->field_type('at_create', 'hidden');
             $crud->field_type('status', 'true_false');
             $crud->unique_fields(array('username'));   
          

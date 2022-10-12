@@ -14,7 +14,7 @@
                         <td><img width="30px" class="img-circle" src="<?php echo base_url() . 'assets/images/avatar.png'?>" alt="img"></td>
                         <td><?php echo $data['lastname'];?>,<?php echo $data['firstname'];?></td>
                         <td><?php echo $data['grade'];?></td>
-                        <td>5</td>
+                        <td><?php echo $data['total_ticket'];?></td>
                     </tr>
                 </tbody>
             <?php } ?>  
