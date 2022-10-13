@@ -59,7 +59,8 @@ class User extends CI_Controller
             $crud->display_as('movil', 'Numero de Celular: '); 
             $crud->field_type('at_create', 'hidden');
             $crud->field_type('status', 'true_false');
-            $crud->unique_fields(array('username'));   
+            $crud->unique_fields(array('username'));
+            $crud->required_fields('username','password');
          
             $i = $this->session->userdata('rol_user');
             switch ($i) {
@@ -83,24 +84,7 @@ class User extends CI_Controller
 
             }
 
-            /*$crud->set_lang_string(
-                'update_success_message',
-                'Actuaiización Exitosa!.
-					<script type="text/javascript">
-					swal.fire({
-						title: "Bien Hecho!",
-						text: "Sus Datos Fuerón Actualizados!",
-						icon: "success",
-						button: "Cerrar Sesión",
-						})
-						.then(function(result){
-							window.location = "' . base_url() . 'cerrarsesion' . '";
-							});
-							</script>
-							<div style="display:none">
-							'
-            );*/
-
+            //$crud->callback_before_update(array($this,'encrypt_pw'));
             $crud->callback_before_insert(array($this, 'encrypt_pw'));
             $crud->callback_column('status', array($this, 'idenvisualestado'));
 

@@ -24,5 +24,13 @@ class Model_auth extends CI_Model
         return $query->result_array();
     }
 
+    public function count_user()
+    {
+        $query = $this->db->query('
+        SELECT COUNT(u.username) AS "count_user" FROM user AS u;
+        ');
+        return $query->result_array();
+    }
+
 
 }

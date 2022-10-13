@@ -50,6 +50,7 @@ class Ticket extends CI_Controller
             $crud->order_by('fecha_ticket','desc');
             $crud->field_type('fecha_ticket', 'hidden');
             $crud->field_type('id_user', 'hidden');
+            $crud->required_fields('categoria','observacion', 'estado_ticket');
             //$crud->field_type('estado_ticket', 'hidden');
             
             //$crud->set_relation('id_user','user','{username} - {firstname} {lastname}');

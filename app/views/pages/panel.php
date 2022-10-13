@@ -5,7 +5,9 @@
     <div class="panel panel-info">
     <div class="panel-heading"># Usuarios</div>
     <div class="panel-body">
-        <h1><span class="glyphicon glyphicon-user" aria-hidden="true"></span> 20</h1>
+    <?php foreach ($count_user as $data) {?>
+        <h1><span class="glyphicon glyphicon-user" aria-hidden="true"></span> <?php echo $data['count_user'];?></h1>
+        <?php } ?> 
     </div>
 
     </div>
