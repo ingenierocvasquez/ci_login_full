@@ -57,7 +57,7 @@ class User extends CI_Controller
             $crud->display_as('datebirth', 'Fecha de Nacimiento: ');
             $crud->display_as('grade', 'Grado: ');    
             $crud->display_as('movil', 'Numero de Celular: '); 
-            //$crud->field_type('at_create', 'hidden');
+            $crud->field_type('at_create', 'hidden');
             $crud->field_type('status', 'true_false');
             $crud->unique_fields(array('username'));   
          

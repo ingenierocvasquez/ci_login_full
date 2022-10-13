@@ -1,6 +1,47 @@
-<h1>Top 10 de Solicitudes</h1>
+<h1>Indicadores</h1>
+
+<div class="row">
+    <div class="col-md-3">
+    <div class="panel panel-info">
+    <div class="panel-heading"># Usuarios</div>
+    <div class="panel-body">
+        <h1><span class="glyphicon glyphicon-user" aria-hidden="true"></span> 20</h1>
+    </div>
+
+    </div>
+    </div>
+    <div class="col-md-3">
+    <div class="panel panel-warning">
+    <div class="panel-heading"># Solicitudes</div>
+    <div class="panel-body">
+        <h1><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> 20</h1>
+    </div>
+    </div>  
+    </div>
+    <div class="col-md-3">
+    <div class="panel panel-danger">
+    <div class="panel-heading"># Ticket Abiertos</div>
+    <div class="panel-body">
+        <h1><span class="glyphicon glyphicon-tag" aria-hidden="true"></span> 20</h1>
+    </div>
+    </div>  
+    </div>   
+
+    <div class="col-md-3">
+    <div class="panel panel-success">
+    <div class="panel-heading"># Ticket Cerrados</div>
+    <div class="panel-body">
+        <h1><span class="glyphicon glyphicon-tag" aria-hidden="true"></span> 20</h1>
+    </div>
+    </div>  
+    </div>  
+    </div>
+</div>
+
+
+<div class="container">
+<h1>Top 10 de Solicitudes por usuario</h1>
 <hr>
-<div class="containter">
 <table class="table table-hover">
                 <thead>
                     <th>Foto</th>

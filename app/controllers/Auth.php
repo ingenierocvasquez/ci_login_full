@@ -35,7 +35,7 @@ class Auth extends CI_Controller
                     $this->load->view('template/header', $data);
                     $this->load->view('template/navbar');
                     $this->load->view('pages/panel', $data);
-                    $this->load->view('template/footer');
+                    $this->load->view('template/footer', $data);
                     break;
                 case "2":
                     $data['data_user'] = $this->Model_auth->data_user();
@@ -43,7 +43,7 @@ class Auth extends CI_Controller
                     $this->load->view('template/header', $data);
                     $this->load->view('template/navbar');
                     $this->load->view('pages/panel', $data);
-                    $this->load->view('template/footer');
+                    $this->load->view('template/footer', $data);
                    
                     break;
                 case "3":

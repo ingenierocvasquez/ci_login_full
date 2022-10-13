@@ -17,8 +17,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
     <script src="<?php echo base_url().'assets/bootstrap/js/bootstrap.js'?>"></script>
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
     
     <!-- Groser Crud JS -->
     <script src="<?php echo base_url().'assets/grocery_crud/js/jquery-2.2.4.min.js' ?>"></script>
@@ -35,11 +33,10 @@
     <script>   
     $(document).ready(function(){
     let f = new Date();             
-    let fecha_format = f.getFullYear() + "-" + (f.getMonth() +1) + "-"+ f.getDate();
+    let fecha_format = f.getFullYear() + "-" + (f.getMonth() +1) + "-"+ f.getDate();    
     $('#field-fecha_ticket').val(fecha_format);
-
+    $('#field-at_create').val(fecha_format);    
   });
-  
   </script>
 
 </body>

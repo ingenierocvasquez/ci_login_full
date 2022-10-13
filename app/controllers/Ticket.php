@@ -45,12 +45,14 @@ class Ticket extends CI_Controller
             $crud->set_table('ticket');
 
             $crud->set_subject('Registro de Tickets');
-            $crud->display_as('id_user', 'Usuario: ');      
+            $crud->display_as('id_user', 'Usuario: '); 
+            $crud->display_as('observacion', 'Solicitud: ');        
             $crud->order_by('fecha_ticket','desc');
-            $crud->change_field_type('observacion', 'text');
             $crud->field_type('fecha_ticket', 'hidden');
+            $crud->field_type('id_user', 'hidden');
+            //$crud->field_type('estado_ticket', 'hidden');
             
-            $crud->set_relation('id_user','user','{username} - {firstname} {lastname}');
+            //$crud->set_relation('id_user','user','{username} - {firstname} {lastname}');
  
          
             $i = $this->session->userdata('rol_user');
@@ -68,13 +70,26 @@ class Ticket extends CI_Controller
                     $crud->unset_export();
                     $crud->unset_edit();
                     $crud->where('id_user', $this->session->userdata('username'));
-                    $crud->columns('id_ticket','fecha_ticket', 'id_user', 'categoria', 'estado_ticket', 'observacion');
+                    $crud->columns('id_ticket','fecha_ticket', 'categoria', 'estado_ticket', 'observacion');
                     break;
                
 
                 default:
                     redirect('login');
 
+            }
+
+            $state = $crud->getState();
+            if($state == 'add')
+            { ?>
+                 <script src="<?php echo base_url().'assets/grocery_crud/js/jquery-2.2.4.min.js' ?>"></script>
+                <script type="text/javascript">
+                $(document).ready(function(){
+                let user_id = <?php echo $this->session->userdata('username');?>;
+                $('#field-id_user').val(user_id);
+            });
+                </script>
+               <?php 
             }
 
             /*$crud->set_lang_string(
@@ -96,7 +111,7 @@ class Ticket extends CI_Controller
             );*/
 
             //$crud->callback_before_insert(array($this, 'encrypt_pw'));
-            //$crud->callback_column('status', array($this, 'idenvisualestado'));
+            $crud->callback_column('estado_ticket', array($this, 'idenvisualestado'));
 
             $output = $crud->render();
             $this->_salida_datos($output);
@@ -115,10 +130,10 @@ class Ticket extends CI_Controller
 
     public function idenvisualestado($value, $row)
     {
-        if ($value == '1') {
-            return '<span class="label label-success">' . $value = "Activo" . '</span>';
-        } elseif ($value == '0') {
-            return '<span class="label label-danger">' . $value = "Inactivo" . '</span>';
+        if ($value == 'Cerrado') {
+            return '<span class="label label-success">' . $value = "Cerrado" . '</span>';
+        } elseif ($value == 'Abierto') {
+            return '<span class="label label-danger">' . $value = "Abierto" . '</span>';
         }
     }
 }
