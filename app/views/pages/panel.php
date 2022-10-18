@@ -16,7 +16,9 @@
     <div class="panel panel-warning">
     <div class="panel-heading"># Solicitudes</div>
     <div class="panel-body">
-        <h1><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> 20</h1>
+    <?php foreach ($count_ticket as $data) {?>
+        <h1><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> <?php echo $data['count_ticket'];?></h1>
+        <?php } ?> 
     </div>
     </div>  
     </div>
@@ -24,7 +26,9 @@
     <div class="panel panel-danger">
     <div class="panel-heading"># Ticket Abiertos</div>
     <div class="panel-body">
-        <h1><span class="glyphicon glyphicon-tag" aria-hidden="true"></span> 20</h1>
+    <?php foreach ($count_tabiertos as $data) {?>
+        <h1><span class="glyphicon glyphicon-tag" aria-hidden="true"></span> <?php echo $data['count_ticket_abierto'];?></h1>
+        <?php } ?> 
     </div>
     </div>  
     </div>   
@@ -33,7 +37,9 @@
     <div class="panel panel-success">
     <div class="panel-heading"># Ticket Cerrados</div>
     <div class="panel-body">
-        <h1><span class="glyphicon glyphicon-tag" aria-hidden="true"></span> 20</h1>
+    <?php foreach ($count_tcerrados as $data) {?>
+        <h1><span class="glyphicon glyphicon-tag" aria-hidden="true"></span> <?php echo $data['count_ticket_cerrado'];?></h1>
+        <?php } ?> 
     </div>
     </div>  
     </div>  

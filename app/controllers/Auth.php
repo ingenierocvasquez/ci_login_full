@@ -32,6 +32,9 @@ class Auth extends CI_Controller
                 case '1':
                     $data['data_user'] = $this->Model_auth->data_user();
                     $data['count_user'] = $this->Model_auth->count_user();
+                    $data['count_ticket'] = $this->Model_auth->count_ticket();
+                    $data['count_tabiertos'] = $this->Model_auth->count_tabiertos();
+                    $data['count_tcerrados'] = $this->Model_auth->count_tcerrados();
                     $data['title'] = 'App-Solicitudes-Administrador';
                     $this->load->view('template/header', $data);
                     $this->load->view('template/navbar');
@@ -41,12 +44,14 @@ class Auth extends CI_Controller
                 case "2":
                     $data['data_user'] = $this->Model_auth->data_user();
                     $data['count_user'] = $this->Model_auth->count_user();
+                    $data['count_ticket'] = $this->Model_auth->count_ticket();
+                    $data['count_tabiertos'] = $this->Model_auth->count_tabiertos();
+                    $data['count_tcerrados'] = $this->Model_auth->count_tcerrados();
                     $data['title'] = 'App-Solicitudes-Estudiante';
                     $this->load->view('template/header', $data);
                     $this->load->view('template/navbar');
                     $this->load->view('pages/panel', $data);
-                    $this->load->view('template/footer', $data);
-                   
+                    $this->load->view('template/footer', $data);                   
                     break;
                 case "3":
                     

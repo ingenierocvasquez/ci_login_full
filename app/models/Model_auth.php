@@ -32,5 +32,32 @@ class Model_auth extends CI_Model
         return $query->result_array();
     }
 
+    public function count_ticket()
+    {
+        $query = $this->db->query('
+        SELECT COUNT(t.id_user) AS "count_ticket" FROM ticket AS t;
+        ');
+        return $query->result_array();
+    }
+
+    public function count_tabiertos()
+    {
+        $query = $this->db->query('
+        SELECT COUNT(t.id_user) AS "count_ticket_abierto" FROM ticket AS t
+        WHERE t.estado_ticket = "Abierto";
+        ');
+        return $query->result_array();
+    }
+
+    public function count_tcerrados()
+    {
+        $query = $this->db->query('
+        SELECT COUNT(t.id_user) AS "count_ticket_cerrado" FROM ticket AS t
+        WHERE t.estado_ticket = "Cerrado";
+        ');
+        return $query->result_array();
+    }
+
+
 
 }
